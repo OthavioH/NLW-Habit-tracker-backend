@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsx src/server.ts",
+    "start": "node dist/server.js",
+    "start:prod": "npm run build && npm run start",
     "dev": "tsx watch src/server.ts",
     "build": "tsc && npx prisma generate"
   },

@@ -11,7 +11,7 @@ app.register(cors, {
 
 app.register(appRoutes);
 
-const port: any = process.env.PORT || 3333;
+const port: any = process.env.PORT || 8080;
 
 app
   .listen({
