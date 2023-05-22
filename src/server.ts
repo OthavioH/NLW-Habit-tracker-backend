@@ -12,9 +12,11 @@ app.register(cors, {
 
 app.register(appRoutes);
 
+const port: any = process.env.PORT || 3333;
+
 app
   .listen({
-    port: 3333,
+    port: port,
     host: "0.0.0.0",
   })
   .then(() => {
