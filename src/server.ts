@@ -1,6 +1,5 @@
 import Fastify from "fastify";
 import cors from "@fastify/cors";
-import morgan from "morgan";
 
 import { appRoutes } from "./routes";
 
