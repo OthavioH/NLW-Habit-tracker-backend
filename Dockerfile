@@ -4,7 +4,6 @@ WORKDIR /docker/app
 
 COPY package*.json ./
 COPY prisma ./prisma
-COPY .env ./
 COPY tsconfig.json ./
 COPY . .
 
