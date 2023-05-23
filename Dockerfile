@@ -10,7 +10,7 @@ COPY . .
 RUN npm ci
 
 RUN npx prisma generate
-RUN prisma db pull
+RUN npx prisma db pull
 
 EXPOSE 8080
 
