@@ -3,7 +3,7 @@ FROM node:alpine
 WORKDIR /docker/app
 
 COPY package*.json ./
-RUN yarn install --production
+RUN yarn install
 
 RUN export NODE_ENV=production
 RUN yarn
