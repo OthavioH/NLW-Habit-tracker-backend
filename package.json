@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "start:prod": "npm run build && npm run start",
-    "prisma:generate": "prisma generate",
-    "dev": "tsx watch src/server.ts",
+    "dev": "ts-node src/server.ts",
     "build": "tsc"
   },
   "keywords": [],
@@ -19,14 +18,13 @@
     "dayjs": "^1.11.7",
     "fastify": "^4.11.0",
     "morgan": "^1.10.0",
-    "zod": "^3.20.2",
-    "tsx": "^3.12.2",
-    "typescript": "^4.9.4",
     "prisma": "^4.9.0",
-    "prisma-erd-generator": "^1.2.5",
-    "@mermaid-js/mermaid-cli": "^9.3.0"
+    "zod": "^3.20.2"
   },
   "devDependencies": {
-    "@types/morgan": "^1.9.4"
+    "@types/morgan": "^1.9.4",
+    "ts-node": "^10.9.1",
+    "tsx": "^3.12.2",
+    "typescript": "^4.9.4"
   }
 }

@@ -3,17 +3,14 @@ FROM node:alpine
 WORKDIR /docker/app
 
 COPY package*.json ./
-RUN yarn install
-
-RUN export NODE_ENV=production
-RUN yarn
-
+COPY prisma ./prisma
+COPY .env ./
+COPY tsconfig.json ./
 COPY . .
 
-COPY prisma prisma
-RUN yarn run prisma:generate
-RUN yarn build
-RUN cp -R node_modules prod_node_modules
+RUN npm ci
+
+RUN npx prisma generate
 
 EXPOSE 8080
 
