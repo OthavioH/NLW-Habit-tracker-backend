@@ -10,7 +10,7 @@ COPY . .
 RUN npm ci
 
 RUN npx prisma generate
-RUN npx prisma db pull
+RUN npx prisma migrate deploy
 
 EXPOSE 8080
 
