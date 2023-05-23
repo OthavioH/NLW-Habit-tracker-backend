@@ -7,7 +7,7 @@
     "start": "node dist/server.js",
     "start:prod": "npm run build && npm run start",
     "dev": "tsx watch src/server.ts",
-    "build": "npm install && tsc && npx prisma generate"
+    "build": "npm install && tsc"
   },
   "keywords": [],
   "author": "",
