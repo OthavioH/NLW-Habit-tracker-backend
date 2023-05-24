@@ -4,6 +4,11 @@ import { z } from "zod";
 import dayjs from "dayjs";
 
 export async function appRoutes(app: FastifyInstance) {
+  app.get("/", async (req, res) => {
+    const users = await prisma.user.findMany();
+    return res.send({ users, prismaURL: process.env.DATABASE_URL });
+  });
+
   app.post("/users", async (request, res) => {
     const createUserBody = z.object({
       name: z.string(),
@@ -203,7 +208,7 @@ export async function appRoutes(app: FastifyInstance) {
                     JOIN habits H
                         ON H.id = HWD.habit_id
                     WHERE
-                        HWD.week_day = cast(strftime('%w', D.date/1000.0, 'unixepoch') as int)
+                        HWD.week_day = EXTRACT(DOW FROM D.date) + 1
                         AND H.created_at <= D.date
                 ) as amount
             FROM days D WHERE D.user_id = ${userId}

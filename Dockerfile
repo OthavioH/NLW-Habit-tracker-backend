@@ -9,6 +9,7 @@ COPY . .
 
 RUN npm ci
 
+RUN npx prisma db push
 RUN npx prisma generate
 
 EXPOSE 8080
